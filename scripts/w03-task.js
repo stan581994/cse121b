@@ -68,7 +68,7 @@ const discountedPrice = function(price){
 function isDiscounted(){
     let subtotal = Number(document.querySelector('#subtotal').value);
     const checkBoxMember = document.getElementById('member');
-    if(checkBoxMember.check){
+    if(checkBoxMember.checked){
         document.querySelector('#total').textContent = `$${discountedPrice(subtotal).toFixed(2)}`;
     }else{
         document.querySelector('#total').textContent = `$${(subtotal).toFixed(2)}`;
