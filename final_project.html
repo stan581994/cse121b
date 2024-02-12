@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Simple E-Commerce App</title>
+    <title>Steven's E-Commerce Storee App</title>
 </head>
 
 <body>
 
     <header>
-        <h1>My E-Commerce Store</h1>
+        <h1>Steven's E-Commerce Store</h1>
     </header>
 
     <div class="main-container">
@@ -23,18 +23,36 @@
 
         <aside class="cart">
             <h2>Shopping Cart</h2>
-            <ul id="cart-list">
-                <!-- Cart items will be dynamically added here -->
-            </ul>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-list">
+                    <!-- Cart items will be dynamically added here -->
+                </tbody>
+            </table>
             <div id="cart-total">
-                <p>Total: $<span id="total-cost">0.00</span></p>
+                <div class="prime-membership">
+                    <label for="prime-member">Are you a prime member?</label>
+                    <select id="prime-member">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
             </div>
+            <button id="compute-total-btn">Compute Total</button>
+            <p>Total: $<span id="total-cost">0.00</span></p>
         </aside>
+        
     </div>
 
 
     <footer>
-        <p>&copy; 2024 My E-Commerce Store. All rights reserved.</p>
+        <p>&copy; 2024 Steven's E-Commerce Store. All rights reserved.</p>
     </footer>
 
     <script src="scripts/ecommerce.js"></script>
