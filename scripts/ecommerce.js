@@ -1,7 +1,6 @@
 const productUrl = "https://fakestoreapi.com/products/";
 
-
-let totalPrice = 0;
+let shoppingCartTotalPrice = [];
 
 async function fetchProduct (){
     try{
@@ -81,8 +80,8 @@ const displayProduct = (productList) => {
 
 const addToCart = (product,quantity)=>{
 
-    totalPrice += product.price * quantity;
-    console.log(totalPrice);
+    shoppingCartTotalPrice.push(product.price * quantity);
+
     const cartList = document.getElementById('cart-list');
     const newRow = document.createElement('tr');
     const nameCell = document.createElement('td');
@@ -102,6 +101,8 @@ const addToCart = (product,quantity)=>{
 const compute = () =>{
     const checkBoxMember = document.getElementById('prime-member');
     const totalPriceLabel = document.getElementById('total-cost');
+    const totalPrice = shoppingCartTotalPrice.reduce((totalPrice, price)=>
+        totalPrice + price,0);
     const selectedValue = checkBoxMember.value;
 
     if(selectedValue === 'yes'){
